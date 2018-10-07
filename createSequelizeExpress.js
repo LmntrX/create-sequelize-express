@@ -189,9 +189,7 @@ function createApp(name, verbose) {
         console.log(chalk.red(`Error extracting files...`));
       } else {
         console.log(chalk.blue(`Completed extracting files...`));
-        console.log();
         console.log(chalk.blue(`Installing dependencies...`));
-        console.log();
         spawn("npm", ["install"], { stdio: "inherit" });
         fs.renameSync(
           path.join(root, ".gitignore-skeleton"),
@@ -204,6 +202,23 @@ function createApp(name, verbose) {
         spawn("rm", ["._src"]);
         spawn("rm", ["._package-lock.json"]);
         spawn("rm", ["._.gitignore-skeleton"]);
+        spawn("npm", ["install", "-g", "sequelize-cli"]);
+        console.log("Setup Complete.");
+        console.log();
+        console.log(
+          `NB: See ${chalk.yellow(
+            "src/config/config.json"
+          )} to setup your environment`
+        );
+        console.log();
+        console.log(
+          `After setting up the environment, run ${chalk.yellow(
+            "sequelize db:migrate"
+          )} in '${chalk.yellow(
+            projectName
+          )}' directory to create user model in the database`
+        );
+        console.log();
       }
     }
   );

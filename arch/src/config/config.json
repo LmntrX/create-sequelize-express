@@ -1,0 +1,31 @@
+{
+  "db": {
+    "development": {
+      "username": "USERNAME_HERE",
+      "password": "PASSWORD_HERE",
+      "database": "DATABASE_HERE",
+      "host": "127.0.0.1",
+      "dialect": "postgres"
+    },
+    "staging": {
+      "username": "USERNAME_HERE",
+      "password": "PASSWORD_HERE",
+      "database": "DATABASE_HERE",
+      "host": "127.0.0.1",
+      "dialect": "postgres"
+    },
+    "production": {
+      "username": "USERNAME_HERE",
+      "password": "PASSWORD_HERE",
+      "database": "DATABASE_HERE",
+      "host": "127.0.0.1",
+      "dialect": "postgres"
+    }
+  },
+  "env": {
+    "PORT": 3000,
+    "HOST": "",
+    "JWT_SECRET": "",
+    "NODE_ENV": ""
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "create-sequelize-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LmntrX/create-sequelize-express.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "sequelize",
+    "app",
+    "postgres",
+    "express"
+  ],
+  "author": "Lmntrx",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/LmntrX/create-sequelize-express/issues"
+  },
+  "homepage": "https://github.com/LmntrX/create-sequelize-express#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.18.0",
+    "cross-spawn": "^6.0.5",
+    "envinfo": "^5.10.0",
+    "fs-extra": "^7.0.0",
+    "tar-pack": "^3.4.1",
+    "targz": "^1.0.1",
+    "validate-npm-package-name": "^3.0.0"
+  }
+}

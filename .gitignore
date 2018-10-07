@@ -63,3 +63,4 @@ typings/
 # project specific
 arch/
 test/
+arch/src/setup.js

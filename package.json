@@ -1,10 +1,13 @@
 {
   "name": "create-sequelize-express",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "create-sequelize-express": "./app.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +21,7 @@
     "postgres",
     "express"
   ],
-  "author": "Lmntrx",
+  "author": "Livin Mathew",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/LmntrX/create-sequelize-express/issues"

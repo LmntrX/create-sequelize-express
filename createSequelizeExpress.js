@@ -149,7 +149,7 @@ function createApp(name, verbose) {
     description: "",
     main: "app.js",
     scripts: {
-      test: 'echo "Error: no test specified" && exit 1',
+      test: "mocha --exit --recursive",
       start: "nodemon ./bin/www",
       "start:dev": "nodemon ./bin/www"
     },
@@ -170,6 +170,11 @@ function createApp(name, verbose) {
       pg: "^7.4.3",
       "pg-hstore": "^2.3.2",
       sequelize: "^4.38.1"
+    },
+    devDependencies: {
+      chai: "^4.2.0",
+      "chai-http": "^4.2.0",
+      mocha: "^5.2.0"
     }
   };
   fs.writeFileSync(

@@ -195,13 +195,9 @@ function createApp(name, verbose) {
           path.join(root, ".gitignore-skeleton"),
           path.join(root, ".gitignore")
         );
-        spawn("rm", ["._app.js"]);
+        console.log(chalk.blue(`Cleaning up...`));
+        spawn("find", [".", "-name", "._*", "-delete"]);
         spawn("rm", ["arch.tar.gz"]);
-        spawn("rm", ["._arch"]);
-        spawn("rm", ["._bin"]);
-        spawn("rm", ["._src"]);
-        spawn("rm", ["._package-lock.json"]);
-        spawn("rm", ["._.gitignore-skeleton"]);
         spawn("npm", ["install", "-g", "sequelize-cli"]);
         console.log("Setup Complete.");
         console.log();

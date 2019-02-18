@@ -37,6 +37,8 @@ const validateProjectName = require("validate-npm-package-name");
 const chalk = require("chalk");
 const commander = require("commander");
 const fs = require("fs-extra");
+const Promise = require("bluebird");
+const fs_promise = Promise.promisifyAll(require("fs"));
 const envinfo = require("envinfo");
 const execSync = require("child_process").execSync;
 const spawn = require("cross-spawn");
@@ -128,6 +130,18 @@ function printValidationResults(results) {
 
 createApp(projectName, program.verbose);
 
+function moveAllFiles(srcDir, destDir) {
+  return fs_promise.readdirAsync(srcDir).map(function(file) {
+    var destFile = path.join(destDir, file);
+    console.log(destFile);
+    return fs_promise
+      .renameAsync(path.join(srcDir, file), destFile)
+      .then(function() {
+        return destFile;
+      });
+  });
+}
+
 function createApp(name, verbose) {
   const root = path.resolve(name);
   const appName = path.basename(root);
@@ -194,33 +208,38 @@ function createApp(name, verbose) {
       if (err) {
         console.log(chalk.red(`Error extracting files...`));
       } else {
-        console.log(chalk.blue(`Completed extracting files...`));
-        console.log(chalk.blue(`Installing dependencies...`));
-        spawn("npm", ["install"], { stdio: "inherit" });
-        fs.renameSync(
-          path.join(root, ".gitignore-skeleton"),
-          path.join(root, ".gitignore")
-        );
-        console.log(chalk.blue(`Cleaning up...`));
-        spawn("find", [".", "-name", "._*", "-delete"]);
-        spawn("rm", ["arch.tar.gz"]);
-        spawn("npm", ["install", "-g", "sequelize-cli"]);
-        console.log("Setup Complete.");
-        console.log();
-        console.log(
-          `NB: See ${chalk.yellow(
-            "src/config/config.json"
-          )} to setup your environment`
-        );
-        console.log();
-        console.log(
-          `After setting up the environment, run ${chalk.yellow(
-            "sequelize db:migrate"
-          )} in '${chalk.yellow(
-            projectName
-          )}' directory to create user model in the database`
-        );
-        console.log();
+        moveAllFiles(path.join(root, "arch"), root)
+          .then(files => {
+            console.log(chalk.blue(`Completed extracting files...`));
+            console.log(chalk.blue(`Installing dependencies...`));
+            spawn("npm", ["install"], { stdio: "inherit" });
+            fs.renameSync(
+              path.join(root, ".gitignore-skeleton"),
+              path.join(root, ".gitignore")
+            );
+            console.log(chalk.blue(`Cleaning up...`));
+            spawn("find", [".", "-name", "._*", "-delete"]);
+            spawn("rm", ["arch.tar.gz"]);
+            spawn("rm", ["-rf", "arch"]);
+            spawn("npm", ["install", "-g", "sequelize-cli"]);
+            console.log("Setup Complete.");
+            console.log();
+            console.log(
+              `NB: See ${chalk.yellow(
+                "src/config/config.json"
+              )} to setup your environment`
+            );
+            console.log();
+            console.log(
+              `After setting up the environment, run ${chalk.yellow(
+                "sequelize db:migrate"
+              )} in '${chalk.yellow(
+                projectName
+              )}' directory to create user model in the database`
+            );
+            console.log();
+          })
+          .catch(error => console.error(error));
       }
     }
   );

@@ -1,0 +1,14 @@
+// Application entry.
+const http = require('http');
+const setupEnvironment = require('../src/config/setup');
+
+setupEnvironment()
+
+const app = require('../app');
+const port = parseInt(process.env.PORT, 10) || 5000;
+app.set('port', port);
+
+const server = http.createServer(app);
+server.listen(port);
+
+module.exports = app;

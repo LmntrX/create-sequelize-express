@@ -149,7 +149,7 @@ function createApp(name, verbose) {
     description: "",
     main: "app.js",
     scripts: {
-      test: "mocha --exit --recursive",
+      test: "nyc mocha --exit --recursive",
       start: "nodemon ./bin/www",
       "start:dev": "nodemon ./bin/www"
     },
@@ -174,7 +174,8 @@ function createApp(name, verbose) {
     devDependencies: {
       chai: "^4.2.0",
       "chai-http": "^4.2.0",
-      mocha: "^5.2.0"
+      mocha: "^5.2.0",
+      nyc: "^13.1.0"
     }
   };
   fs.writeFileSync(

@@ -28,7 +28,6 @@
   "env": {
     "PORT": 3000,
     "HOST": "",
-    "JWT_SECRET": "",
-    "NODE_ENV": ""
+    "JWT_SECRET": ""
   }
 }

@@ -164,7 +164,8 @@ function createApp(name, verbose) {
     main: "app.js",
     scripts: {
       test: "nyc mocha --exit --recursive",
-      start: "nodemon ./bin/www",
+      start: "node ./bin/www",
+      deploy: "./deploy.sh",
       "start:dev": "nodemon ./bin/www"
     },
     repository: {

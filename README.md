@@ -1,6 +1,6 @@
 # Create Sequelize Express
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLmntrX%2Fcreate-sequelize-express.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FLmntrX%2Fcreate-sequelize-express?ref=badge_shield)
 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FLmntrX%2Fcreate-sequelize-express.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2FLmntrX%2Fcreate-sequelize-express?ref=badge_small) [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/Livin21/create-sequelize-express)
 
 Create Sequelize-Express apps with no configuration.
 
@@ -101,6 +101,5 @@ Your environment will have everything you need to build a modern express REST AP
 ## License
 
 Create Sequelize Express is open source software [licensed as Apache 2.0](https://github.com/LmntrX/create-sequelize-express/blob/master/LICENSE).
-
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLmntrX%2Fcreate-sequelize-express.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FLmntrX%2Fcreate-sequelize-express?ref=badge_large)

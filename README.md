@@ -1,6 +1,6 @@
 # Create Sequelize Express
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FLmntrX%2Fcreate-sequelize-express.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2FLmntrX%2Fcreate-sequelize-express?ref=badge_small) [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/Livin21/create-sequelize-express)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FLmntrX%2Fcreate-sequelize-express.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2FLmntrX%2Fcreate-sequelize-express?ref=badge_small) [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/Livin21/create-sequelize-express) [![CreateSequelizeExpress](https://circleci.com/gh/LmntrX/create-sequelize-express.svg?style=svg)](https://circleci.com/gh/LmntrX/create-sequelize-express)
 
 Create Sequelize-Express apps with no configuration.
 

@@ -35,5 +35,3 @@ jobs:
 
       - run: yarn build
       - run: yarn start test_pro
-      - run: cd test_pro
-      - run: yarn start

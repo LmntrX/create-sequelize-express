@@ -176,18 +176,18 @@ function createApp(name, verbose) {
     homepage: "",
     dependencies: {
       "bcrypt-nodejs": "0.0.3",
-      "body-parser": "^1.18.3",
-      cors: "^2.8.4",
-      express: "^4.16.3",
-      jsonwebtoken: "^8.3.0",
+      "body-parser": "^1.19.0",
+      cors: "^2.8.5",
+      express: "^4.17.1",
+      jsonwebtoken: "^8.5.1",
       morgan: "^1.9.0",
-      pg: "^7.4.3",
-      "pg-hstore": "^2.3.2",
-      sequelize: "^4.38.1"
+      pg: "^7.17.1",
+      "pg-hstore": "^2.3.3",
+      sequelize: ">=5.3.0"
     },
     devDependencies: {
       chai: "^4.2.0",
-      "chai-http": "^4.2.0",
+      "chai-http": "^4.3.0",
       mocha: "^5.2.0",
       nyc: "^13.1.0"
     }
